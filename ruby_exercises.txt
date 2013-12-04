@@ -1,0 +1,87 @@
+Note: we're looking for Ruby commands for the below questions, not the actual answers, unless it's a question. 
+
+Hint: you can type "irb" in your terminal to get a Ruby console to test things out. For multi-line code, use an editor that can run Ruby code, or copy/paste into irb.
+
+Hint 2: you can refer to the Ruby doc for Array and Hash here: 
+
+http://www.ruby-doc.org/core-1.9.3/Array.html
+http://www.ruby-doc.org/core-1.9.3/Hash.html
+
+
+1. Use the "each" method of Array to iterate over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], and print out each value.
+
+  answer:
+     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].each {|n| puts n}
+
+2. Same as above, but only print out values greater than 5.
+
+  answer:
+     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].each do |n|
+        if n < 5
+          puts n
+        else
+          next
+        end
+      end
+
+3. Now, using the same array from #2, use the "select" method to extract all odd numbers into a new array.
+
+  answer:
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].select {|n| n.odd?}
+
+4. Append "11" to the end of the array. Prepend "0" to the beginning.
+
+  answer:
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].push(11)
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].unshift(0)
+
+5. Get rid of "11". And append a "3".
+
+  answer:
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].pop
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].push(3)
+
+6. Get rid of duplicates without specifically removing any one value. 
+
+  answer:
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 3].uniq
+
+7. Whats the major difference between an Array and a Hash?
+
+  answer:
+    An array is ordered data list.  A hash is a data dictionary containing both a key and a value.
+
+8. Create a Hash using both Ruby 1.8 and 1.9 syntax.
+
+  answer:
+    1.8.7 -> {:a => 1, :b => 2}
+    1.9 -> {a: 1, b: 2}
+
+Suppose you have a h = {a:1, b:2, c:3, d:4}
+
+9. Get the value of key "b".
+
+  answer:
+    h[:b]
+
+10. Add to this hash the key:value pair {e:5}
+
+  answer:
+    h[:e] = 5
+
+13. Remove all key:value pairs whose value is less than 3.5
+
+  answer:
+    h.delete_if {|k,v| v < 3.5}
+
+14. Can hash values be arrays? Can you have an array of hashes? (give examples)
+
+  answer:
+    Yes, hash values can be example being --> c = {a: [1,2,3]}
+
+    An array can be made up of hashes as well example being --> e = [{a: 1, b: 2, c: 3}, {d: 4, f: 5, h: 6}]
+
+15. Look at several Rails/Ruby online API sources and say which one your like best and why.
+ 
+   answer:
+     http://api.rubyonrails.org/ looks to be laid out very efficiently. 
